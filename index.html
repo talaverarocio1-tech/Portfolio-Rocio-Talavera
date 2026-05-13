@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocío Talavera — Communication Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F7F5F0;
+    --ink: #1A1915;
+    --ink-muted: #6B6960;
+    --ink-faint: #B0ADA4;
+    --border: rgba(26,25,21,0.12);
+    --border-strong: rgba(26,25,21,0.22);
+    --accent: #1A1915;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── LAYOUT ── */
+  .site { max-width: 780px; margin: 0 auto; padding: 0 2rem; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--cream);
+    border-bottom: 0.5px solid var(--border);
+    padding: 1rem 0;
+  }
+
+  .nav-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.75rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ── PHOTO ── */
+  .cover-photo {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.5px solid var(--border-strong);
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .cover-photo-placeholder {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    border: 0.5px solid var(--border-strong);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26,25,21,0.04);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cover-photo-placeholder svg {
+    width: 44px;
+    height: 44px;
+    opacity: 0.2;
+  }
+
+  /* ── CAPABILITIES ── */
+  .cap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+
+  .cap-item {
+    padding: 1.35rem;
+    border-right: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .cap-item:nth-child(2n) { border-right: none; }
+  .cap-item:nth-last-child(-n+2) { border-bottom: none; }
+
+  .cap-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .cap-desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* ── WORK HEADER ── */
+  .work-header {
+    padding: 5rem 0 0;
+  }
+
+  .work-header-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.5rem;
+  }
+
+  .work-header-title {
+    font-family: var(--serif);
+    font-size: clamp(30px, 5vw, 42px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-header-sub {
+    font-size: 14px;
+    color: var(--ink-muted);
+    font-weight: 300;
+    padding-bottom: 3rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  /* ── COVER ── */
+  .cover {
+    padding: 7rem 0 6rem;
+    border-bottom: 0.5px solid var(--border);
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .cover-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 2rem;
+  }
+
+  .cover-name {
+    font-family: var(--serif);
+    font-size: clamp(52px, 8vw, 80px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  .cover-title {
+    font-size: 17px;
+    color: var(--ink-muted);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+
+  .cover-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 5px 14px;
+    border: 0.5px solid var(--border-strong);
+    border-radius: 100px;
+    color: var(--ink-muted);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 5rem 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  /* ── INTRO ── */
+  .intro-text {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3.5vw, 28px);
+    line-height: 1.55;
+    font-style: italic;
+    font-weight: 400;
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+  }
+
+  .cases-nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .case-nav-link {
+    font-size: 13px;
+    color: var(--ink-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: color 0.2s;
+  }
+
+  .case-nav-link:hover { color: var(--ink); }
+
+  .case-nav-num {
+    font-size: 10px;
+    opacity: 0.5;
+  }
+
+  /* ── CASE STUDIES ── */
+  .case { padding: 5rem 0; border-bottom: 0.5px solid var(--border); }
+
+  .case-header { margin-bottom: 3.5rem; }
+
+  .case-index {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.75rem;
+  }
+
+  .case-name {
+    font-family: var(--serif);
+    font-size: clamp(36px, 6vw, 52px);
+    line-height: 1.08;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+  }
+
+  .case-subtitle {
+    font-size: 13px;
+    color: var(--ink-muted);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+  }
+
+  .case-body { display: flex; flex-direction: column; gap: 3rem; }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3.5rem;
+  }
+
+  .block-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.75rem;
+  }
+
+  .block-text {
+    font-size: 15px;
+    line-height: 1.75;
+    font-weight: 300;
+    color: var(--ink);
+  }
+
+  /* ── INSIGHT QUOTE ── */
+  .insight {
+    border-left: 1.5px solid var(--ink);
+    padding: 0.25rem 0 0.25rem 1.75rem;
+  }
+
+  .insight p {
+    font-family: var(--serif);
+    font-size: clamp(17px, 2.5vw, 21px);
+    font-style: italic;
+    line-height: 1.55;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  /* ── DELIVERABLES GRID ── */
+  .del-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .del-item {
+    padding: 1.1rem 1.35rem;
+    border-right: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .del-item:nth-child(2n) { border-right: none; }
+  .del-item:nth-last-child(-n+2) { border-bottom: none; }
+
+  .del-name {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+
+  .del-desc {
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* ── PAYOFF ── */
+  .payoff-box {
+    border: 0.5px solid var(--border-strong);
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .payoff-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    flex-shrink: 0;
+  }
+
+  .payoff-text {
+    font-family: var(--serif);
+    font-size: clamp(20px, 3vw, 26px);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── PILLS ── */
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 0.75rem;
+  }
+
+  .pill {
+    font-size: 12px;
+    padding: 5px 13px;
+    border: 0.5px solid var(--border-strong);
+    border-radius: 100px;
+    color: var(--ink-muted);
+    font-weight: 400;
+  }
+
+  /* ── IMPACT ── */
+  .impact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .impact-item {
+    padding: 1.1rem 1.35rem;
+    border-right: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .impact-item:nth-child(2n) { border-right: none; }
+  .impact-item:last-child, .impact-item:nth-last-child(2) { border-bottom: none; }
+
+  .impact-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 5px;
+  }
+
+  .impact-value {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  /* ── AUDIENCE GRID ── */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+
+  .aud-item {
+    padding: 1.25rem 1.35rem;
+    border-right: 0.5px solid var(--border);
+  }
+
+  .aud-item:last-child { border-right: none; }
+
+  .aud-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+
+  .aud-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 7px;
+    color: var(--ink);
+  }
+
+  .aud-desc {
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+
+  /* ── CHANNELS LIST ── */
+  .channels-list {
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .channel-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    border-bottom: 0.5px solid var(--border);
+    gap: 0;
+  }
+
+  .channel-row:last-child { border-bottom: none; }
+
+  .channel-name {
+    padding: 1rem 1.35rem;
+    font-size: 13px;
+    font-weight: 500;
+    border-right: 0.5px solid var(--border);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+  }
+
+  .channel-desc {
+    padding: 1rem 1.35rem;
+    font-size: 13px;
+    color: var(--ink-muted);
+    font-weight: 300;
+    line-height: 1.55;
+  }
+
+  /* ── PHASES ── */
+  .phases-list {
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .phase-row {
+    display: grid;
+    grid-template-columns: 90px 130px 1fr;
+    border-bottom: 0.5px solid var(--border);
+    align-items: stretch;
+  }
+
+  .phase-row:last-child { border-bottom: none; }
+
+  .phase-num {
+    padding: 1rem 1.35rem;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    border-right: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+  }
+
+  .phase-name {
+    padding: 1rem 1.35rem;
+    font-size: 13px;
+    font-weight: 500;
+    border-right: 0.5px solid var(--border);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+  }
+
+  .phase-desc {
+    padding: 1rem 1.35rem;
+    font-size: 13px;
+    color: var(--ink-muted);
+    font-weight: 300;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+
+  .skill-item {
+    padding: 1rem 1.35rem;
+    font-size: 14px;
+    font-weight: 400;
+    border-right: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    color: var(--ink);
+  }
+
+  .skill-item:nth-child(2n) { border-right: none; }
+  .skill-item:nth-last-child(-n+2) { border-bottom: none; }
+
+  /* ── HOW I WORK ── */
+  .how-list {
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+
+  .how-item {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1rem 1.35rem;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--ink);
+    align-items: baseline;
+  }
+
+  .how-item:last-child { border-bottom: none; }
+
+  .how-num {
+    font-size: 10px;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+    width: 22px;
+  }
+
+  /* ── CLOSING ── */
+  .closing-text {
+    font-size: 15px;
+    line-height: 1.75;
+    font-weight: 300;
+    color: var(--ink-muted);
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 2rem;
+  }
+
+  .contact-item {
+    background: var(--cream);
+    padding: 1.1rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .contact-value {
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-value:hover { color: var(--ink-muted); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.5px solid var(--border);
+    margin-top: 3rem;
+  }
+
+  .footer-name {
+    font-family: var(--serif);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink-muted);
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .two-col { grid-template-columns: 1fr; }
+    .del-grid { grid-template-columns: 1fr; }
+    .impact-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .cap-grid { grid-template-columns: 1fr; }
+    .channel-row { grid-template-columns: 1fr; }
+    .channel-name { border-right: none; border-bottom: 0.5px solid var(--border); }
+    .phase-row { grid-template-columns: 1fr; }
+    .phase-num, .phase-name { border-right: none; border-bottom: 0.5px solid var(--border); }
+    .del-item:nth-child(2n) { border-right: 0.5px solid var(--border); }
+    .del-item { border-bottom: 0.5px solid var(--border) !important; border-right: none !important; }
+    .del-item:last-child { border-bottom: none !important; }
+    .aud-item { border-right: none; border-bottom: 0.5px solid var(--border); }
+    .aud-item:last-child { border-bottom: none; }
+    .nav-links { display: none; }
+    .skill-item:nth-child(2n) { border-right: 0.5px solid var(--border); }
+    .skill-item { border-right: none !important; }
+    .impact-item:nth-child(2n) { border-right: 0.5px solid var(--border); }
+    .impact-item { border-right: none !important; border-bottom: 0.5px solid var(--border) !important; }
+    .impact-item:last-child { border-bottom: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">Rocío Talavera</span>
+    <ul class="nav-links">
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="site">
+
+  <!-- COVER -->
+  <div class="cover">
+    <img class="cover-photo" src="data:image/jpeg;base64,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 quartz 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" alt="Rocío Talavera">
+    <p class="cover-eyebrow">Portfolio · Communication Strategist</p>
+    <h1 class="cover-name">Rocío<br>Talavera</h1>
+    <p class="cover-title">Communication Strategist</p>
+    <div class="cover-tags">
+      <span class="tag">Brand Voice</span>
+      <span class="tag">Content Strategy</span>
+      <span class="tag">Naming</span>
+      <span class="tag">Narrative</span>
+      <span class="tag">Verbal Identity</span>
+      <span class="tag">Messaging Systems</span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section id="about">
+    <p class="section-label">About</p>
+    <p class="intro-text">I work at the intersection of brand strategy, content systems and narrative — building communication as a system, not isolated pieces.</p>
+    <p class="block-text" style="max-width:520px; margin-bottom:2.5rem;">My focus is on defining positioning, shaping voice and creating content frameworks that connect brand, business objectives and user experience. I approach communication as architecture: structured, coherent, scalable.</p>
+    <div class="cases-nav">
+      <a href="#femmes" class="case-nav-link"><span class="case-nav-num">01</span> Femmes</a>
+      <a href="#ismylova" class="case-nav-link"><span class="case-nav-num">02</span> Is My Lova</a>
+      <a href="#ltopia" class="case-nav-link"><span class="case-nav-num">03</span> L'Topia</a>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section id="capabilities">
+    <p class="section-label">Capabilities</p>
+    <div class="cap-grid">
+      <div class="cap-item">
+        <p class="cap-name">Brand Voice & Verbal Identity</p>
+        <p class="cap-desc">Definition of voice, tone and communication principles to ensure consistency across all touchpoints.</p>
+      </div>
+      <div class="cap-item">
+        <p class="cap-name">Content Strategy</p>
+        <p class="cap-desc">Development of structured content systems aligned with brand positioning and business objectives.</p>
+      </div>
+      <div class="cap-item">
+        <p class="cap-name">Naming</p>
+        <p class="cap-desc">Strategic naming processes that connect language, positioning and market context.</p>
+      </div>
+      <div class="cap-item">
+        <p class="cap-name">Narrative & Messaging Systems</p>
+        <p class="cap-desc">Construction of brand narratives and messaging frameworks that define how a brand communicates and is perceived.</p>
+      </div>
+      <div class="cap-item">
+        <p class="cap-name">Copywriting</p>
+        <p class="cap-desc">Clear, intentional writing across platforms — from product interfaces to brand communication.</p>
+      </div>
+      <div class="cap-item">
+        <p class="cap-name">Strategic Consulting</p>
+        <p class="cap-desc">Work sessions with teams and founders to align communication, define positioning and structure messaging.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK HEADER -->
+  <div class="work-header" id="work">
+    <p class="work-header-label">Projects</p>
+    <h2 class="work-header-title">Selected Work</h2>
+    <p class="work-header-sub">Three case studies across brand strategy, verbal identity and communication architecture.</p>
+  </div>
+
+  <!-- CASE 01 — FEMMES -->
+  <div class="case" id="femmes">
+    <div class="case-header">
+      <p class="case-index">Case 01</p>
+      <h2 class="case-name">Femmes</h2>
+      <p class="case-subtitle">Naming · Brand voice · Content strategy · Verbal identity</p>
+    </div>
+
+    <div class="case-body">
+
+      <div>
+        <p class="block-label">The challenge</p>
+        <p class="block-text">Creating the verbal identity of a medical center specialized in gynecology and menopause for upper-middle-class women in Mexico City. The real challenge wasn't just naming a center — it was claiming menopause as a stage that deserves specialized attention, with a premium and human tone at the same time. Existing references in CDMX operated in opposite registers — clinically cold or warmly generic — with no real differentiation or specialization in menopause.</p>
+      </div>
+
+      <div>
+        <p class="block-label">Strategic approach</p>
+        <p class="block-text">A semantic reference universe was built using nine root words across four languages — Nahuatl, Maya, Latin and Greek — linked to the center's values: luna, mujer, ciclo, alma, integralidad, femineidad. From there, 30+ candidates across five territories were explored, each developed with DNA, taglines and real usage contexts. The shortlist of six names was validated with the creative director and chosen by the client in a single session.</p>
+      </div>
+
+      <div>
+        <p class="block-label">System thinking</p>
+        <p class="block-text">The brand's communication was defined across every touchpoint — from the first ad to post-consultation follow-up. Tone, language and intent stay consistent throughout: clinic, web, social media, email, WhatsApp, Google Ads. The approach established how Femmes communicates at every stage of the patient's journey.</p>
+      </div>
+
+      <div>
+        <p class="block-label">What I built</p>
+        <div class="del-grid" style="margin-top:0.75rem;">
+          <div class="del-item">
+            <p class="del-name">Naming</p>
+            <p class="del-desc">Final name with DNA, etymology and cultural justification. Glossary of 9 root keywords with cultural context.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">Voice & tone system</p>
+            <p class="del-desc">4 tone pillars with visual tone scale, real usage examples and counter-examples for each.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">Messaging principles</p>
+            <p class="del-desc">Primary payoff + campaign line + 4 secondary support phrases for the verbal system.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">Content guidelines</p>
+            <p class="del-desc">Style guide, language intent and avoidables list. Channel-by-channel application with description and examples.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="insight">
+        <p>"The key shift was moving from describing the center to speaking from a medical philosophy: understand before treating. Femmes doesn't convince — it declares what it believes."</p>
+      </div>
+
+      <div class="payoff-box">
+        <span class="payoff-label">Payoff</span>
+        <span class="payoff-text">Donde entender tu cuerpo es salud.</span>
+      </div>
+
+      <div>
+        <p class="block-label">Impact</p>
+        <div class="impact-grid">
+          <div class="impact-item">
+            <p class="impact-label">Name chosen</p>
+            <p class="impact-value">First presentation · zero post-client iterations</p>
+          </div>
+          <div class="impact-item">
+            <p class="impact-label">Campaign line</p>
+            <p class="impact-value">Conocer tu cuerpo es salud.</p>
+          </div>
+          <div class="impact-item">
+            <p class="impact-label">Verbal system</p>
+            <p class="impact-value">Name · descriptor · payoff · phrases · tone · channels</p>
+          </div>
+          <div class="impact-item">
+            <p class="impact-label">Territory</p>
+            <p class="impact-value">First menopause center with its own verbal identity in CDMX</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CASE 02 — IS MY LOVA -->
+  <div class="case" id="ismylova">
+    <div class="case-header">
+      <p class="case-index">Case 02</p>
+      <h2 class="case-name">Is My Lova</h2>
+      <p class="case-subtitle">Brand strategy · Verbal identity</p>
+    </div>
+
+    <div class="case-body">
+
+      <div>
+        <p class="block-label">The challenge</p>
+        <p class="block-text">IS MY LOVA is a fashion and art boutique based in Miami, founded by women from different parts of the world with a shared vision: to redefine what a luxury retail experience looks and feels like. The challenge was building a complete brand strategy and verbal identity for a space that needed to hold two things at once — the authority of a luxury fashion house and the eclecticism of a concept store deeply rooted in Miami's cultural energy. The brand needed a clear strategic foundation before anything visual could take shape.</p>
+      </div>
+
+      <div class="insight">
+        <p>"IS MY LOVA doesn't sell fashion. It curates identity." — The single premise from which the entire brand strategy was built.</p>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <p class="block-label">Strategic approach</p>
+          <p class="block-text">The process began with that central insight. From there, the full brand strategy was developed — defining purpose, positioning, audience, pillars, payoff and narrative. Every decision was built around one central concept: presence. Not as an aesthetic quality, but as something a woman carries when she knows exactly who she is and what she's wearing.</p>
+        </div>
+        <div>
+          <p class="block-label">Verbal identity</p>
+          <p class="block-text">The verbal identity established how the brand speaks — direct, editorial, precise — and drew a clear line between what IS MY LOVA says about itself and what it simply does. Including a deliberate framework for how its social purpose is expressed: through action and curatorial decisions, not as a marketing declaration.</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="block-label">Brand pillars</p>
+        <div class="pills">
+          <span class="pill">Curation as Authority</span>
+          <span class="pill">Presence</span>
+          <span class="pill">Intimate Luxury</span>
+          <span class="pill">Culture</span>
+          <span class="pill">Identity</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="block-label">What I built</p>
+        <div class="del-grid" style="margin-top:0.75rem;">
+          <div class="del-item">
+            <p class="del-name">Brand strategy</p>
+            <p class="del-desc">Purpose, value proposition, mission, vision, key differentiators and brand essence.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">Brand narrative</p>
+            <p class="del-desc">Storytelling framework connecting the word Lova, multicultural founding and Miami's identity into a coherent brand story.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">Tone of voice</p>
+            <p class="del-desc">Archetype, personality traits, tone scale, language guidelines and application examples across in-store, website and social media.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">Communication pillars</p>
+            <p class="del-desc">Five pillars with core messages and copy direction for consistent brand communication.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">Positioning</p>
+            <p class="del-desc">Category definition, target audience — demographic and psychographic — positioning statement and differentiation framework.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">Social purpose framework</p>
+            <p class="del-desc">Strategic recommendation for how IS MY LOVA's social commitments live separately from its core brand narrative.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="insight">
+        <p>"The clearest decision in the project was also the most delicate: keeping the brand's social purpose out of its central narrative — not to diminish it, but to protect it."</p>
+      </div>
+
+      <div>
+        <p class="block-label">System thinking</p>
+        <p class="block-text">Every written element was built to function as a system. The narrative connects to the pillars. The pillars inform the tone. The tone shapes the copy. Nothing was written in isolation.</p>
+      </div>
+
+      <div class="payoff-box">
+        <span class="payoff-label">Payoff</span>
+        <span class="payoff-text">You are the accent.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CASE 03 — L'TOPIA -->
+  <div class="case" id="ltopia">
+    <div class="case-header">
+      <p class="case-index">Case 03</p>
+      <h2 class="case-name">L'Topia</h2>
+      <p class="case-subtitle">Communication strategy · Content strategy · Audience segmentation · Brand narrative · Editorial direction</p>
+    </div>
+
+    <div class="case-body">
+
+      <div>
+        <p class="block-label">The challenge</p>
+        <p class="block-text">L'TOPIA is a luxury residential development within The Awen in Tulum — designed to redefine high-end living in the Riviera Maya through timeless architecture, sustainable technology and a conscious lifestyle. The challenge was strategic and narrative in equal parts: launching a new brand with no digital presence, no landing page, and no established positioning — in a market visually saturated with boho-wellness aesthetics — while communicating to three fundamentally different audiences with distinct emotional triggers, investment mindsets and definitions of luxury.</p>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <p class="block-label">Strategic approach</p>
+          <p class="block-text">I started with a competitive audit of eight reference brands — including Faena, Serhant, Pelican Hill, Trovbu and James Edition — mapping what to absorb and what to actively avoid. The diagnosis was clear: most competitors relied on generic aspirational copy, excessive wellness codes, or cold financial language. None had built a differentiated narrative system.</p>
+        </div>
+        <div>
+          <p class="block-label">What I built</p>
+          <p class="block-text">From that foundation, I built the full communication architecture: a master narrative, three audience-specific narratives, a six-phase rollout strategy, a content pillar system, and channel-specific guidelines — all grounded in a single central idea.</p>
+        </div>
+      </div>
+
+      <div class="insight">
+        <p>"L'TOPIA isn't bought. It's belonged to." — The line that anchored every strategic and creative decision in the project.</p>
+      </div>
+
+      <div>
+        <p class="block-label">Audience architecture</p>
+        <p class="block-text" style="margin-bottom:1rem;">One of the core strategic decisions was building three distinct narrative layers for three audiences with different relationships to the brand — each with its own tone, messaging triggers and conversion logic.</p>
+        <div class="audience-grid">
+          <div class="aud-item">
+            <p class="aud-label">Audience A</p>
+            <p class="aud-name">Loyal investors</p>
+            <p class="aud-desc">Existing clients from The Awen. Motivated by ROI, legacy and portfolio continuity. Tone: direct, confident, data-informed.</p>
+          </div>
+          <div class="aud-item">
+            <p class="aud-label">Audience B</p>
+            <p class="aud-name">Lifestyle aspirationals</p>
+            <p class="aud-desc">New buyers driven by identity and belonging. Tone: poetic, evocative, intimate — "country club meets jungle."</p>
+          </div>
+          <div class="aud-item">
+            <p class="aud-label">Audience C</p>
+            <p class="aud-name">Brokers & ambassadors</p>
+            <p class="aud-desc">Strategic partners seeking status and exclusive access. Tone: institutional, selective, club-like — "by invitation only."</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="block-label">Deliverables</p>
+        <div class="del-grid" style="margin-top:0.75rem;">
+          <div class="del-item">
+            <p class="del-name">Master narrative</p>
+            <p class="del-desc">Central brand concept, brand purpose, tone guidelines and key messaging pillars. Defined what L'TOPIA says — and what it never says.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">Audience narratives</p>
+            <p class="del-desc">Three complete narrative systems — each with its own insight, tone, strategy, content formats and copy examples.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">Content system</p>
+            <p class="del-desc">Five content pillars — lifestyle, product, backstage, educational and community — with formats and examples per channel and per phase.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">Channel strategy</p>
+            <p class="del-desc">Platform-specific guidelines for Instagram, Facebook, email, Meta Ads, landing page and PR — each with funnel role, tone and tactics.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">6-phase rollout</p>
+            <p class="del-desc">From strategy and planning (Phase 0) through official launch and PR (Phase 5) — each phase with its own narrative, tactics and KPIs.</p>
+          </div>
+          <div class="del-item">
+            <p class="del-name">Measurement framework</p>
+            <p class="del-desc">Global and per-channel KPIs, reporting cadence, accountability plan and tool stack — from Meta Business Suite to CRM and Google Analytics.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="block-label">Channel strategy</p>
+        <div class="channels-list">
+          <div class="channel-row">
+            <div class="channel-name">Instagram & Facebook</div>
+            <div class="channel-desc">Awareness + aspiration. Cinematic reels, editorial carousels, sensory stories. Old money tone, no boho clichés.</div>
+          </div>
+          <div class="channel-row">
+            <div class="channel-name">Email marketing</div>
+            <div class="channel-desc">Trust + nurture + conversion. Segmented sequences per audience. "By invitation only" for A and C. Aspirational storytelling for B.</div>
+          </div>
+          <div class="channel-row">
+            <div class="channel-name">Meta Ads</div>
+            <div class="channel-desc">Qualified traffic generation. Engagement in Phase 1, conversion in Phase 3, dynamic remarketing in between.</div>
+          </div>
+          <div class="channel-row">
+            <div class="channel-name">Landing page</div>
+            <div class="channel-desc">Central conversion point. Segmented forms, A/B testing, villa gallery and clear download CTA for the exclusive catalog.</div>
+          </div>
+          <div class="channel-row">
+            <div class="channel-name">PR & events</div>
+            <div class="channel-desc">Prestige and credibility. Press kit, luxury media placements and private preview events for brokers and top investors.</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="block-label">Phased execution</p>
+        <div class="phases-list">
+          <div class="phase-row">
+            <div class="phase-num">Phase 0</div>
+            <div class="phase-name">Strategy & planning</div>
+            <div class="phase-desc">Kick-off, benchmarking, buyer personas, narrative system, CRM setup.</div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-num">Phase 1</div>
+            <div class="phase-name">Lifestyle awareness</div>
+            <div class="phase-desc">"Not just architecture — it's belonging to a truly selective community."</div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-num">Phase 2</div>
+            <div class="phase-name">Expectation + storytelling</div>
+            <div class="phase-desc">"Be part of the Founder's Circle." Brand humanization through behind-the-scenes content.</div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-num">Phase 3</div>
+            <div class="phase-name">Catalog + conversion</div>
+            <div class="phase-desc">"By invitation only." Catalog downloads, 1:1 meetings, broker event.</div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-num">Phase 4</div>
+            <div class="phase-name">Community + VIP</div>
+            <div class="phase-desc">"Being part of L'TOPIA is a way of life." Private events, lifestyle series.</div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-num">Phase 5</div>
+            <div class="phase-name">Official launch + PR</div>
+            <div class="phase-desc">"A legacy you inhabit." Media coverage, testimonials, final conversions.</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="block-label">System thinking</p>
+        <p class="block-text">The strategy was built to work as an integrated system — where the master narrative defines what the brand believes, the audience narratives translate that into specific emotional languages, and the channel strategy determines how each message reaches each person at the right moment in their journey.</p>
+      </div>
+
+      <div class="payoff-box">
+        <span class="payoff-label">Central narrative</span>
+        <span class="payoff-text">L'TOPIA isn't bought. It's belonged to.</span>
+      </div>
+
+      <div>
+        <p class="block-label">Impact</p>
+        <div class="impact-grid">
+          <div class="impact-item">
+            <p class="impact-label">Deliverable scope</p>
+            <p class="impact-value">Full strategic plan · 31 pages · 12 sections</p>
+          </div>
+          <div class="impact-item">
+            <p class="impact-label">Audiences mapped</p>
+            <p class="impact-value">3 distinct narrative systems</p>
+          </div>
+          <div class="impact-item">
+            <p class="impact-label">Channels covered</p>
+            <p class="impact-value">5 platforms with specific tone + tactic guidelines</p>
+          </div>
+          <div class="impact-item">
+            <p class="impact-label">Target KPI</p>
+            <p class="impact-value">100 qualified leads in 90 days via landing page</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <p class="section-label">Core skills</p>
+    <div class="skills-grid">
+      <div class="skill-item">Content Strategy</div>
+      <div class="skill-item">Brand Voice & Tone</div>
+      <div class="skill-item">UX Writing</div>
+      <div class="skill-item">Copywriting</div>
+      <div class="skill-item">Storytelling</div>
+      <div class="skill-item">Naming</div>
+      <div class="skill-item">Verbal Identity</div>
+      <div class="skill-item">Messaging Systems</div>
+    </div>
+  </section>
+
+  <!-- HOW I WORK -->
+  <section>
+    <p class="section-label">How I work</p>
+    <p class="closing-text">I'm interested in roles where communication is approached as a system — connecting brand, content and user experience.</p>
+    <div class="how-list">
+      <div class="how-item"><span class="how-num">01</span><span>I structure communication before executing content</span></div>
+      <div class="how-item"><span class="how-num">02</span><span>I define systems, not isolated pieces</span></div>
+      <div class="how-item"><span class="how-num">03</span><span>I adapt narrative without losing coherence</span></div>
+      <div class="how-item"><span class="how-num">04</span><span>I connect brand, content and user experience</span></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-label">Contact</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="contact-label">Location</span>
+        <span class="contact-value">Tulum, Mexico (Remote)</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Email</span>
+        <a href="mailto:talaverarocio1@gmail.com" class="contact-value">talaverarocio1@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Phone</span>
+        <a href="tel:+529841788891" class="contact-value">+52 984 178 8891</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">LinkedIn</span>
+        <a href="https://www.linkedin.com/in/roc%C3%ADo-talavera" target="_blank" class="contact-value">linkedin.com/in/rocío-talavera</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-name">Rocío Talavera</span>
+    <span class="footer-copy">Communication Strategist · 2025</span>
+  </footer>
+
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.animation = 'fadeUp 0.7s ease forwards';
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.case, section').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+
+  // Photo upload: click placeholder to replace with your photo
+  const placeholder = document.getElementById('photo-placeholder');
+  if (placeholder) {
+    placeholder.style.cursor = 'pointer';
+    placeholder.title = 'Click to upload your photo';
+    placeholder.addEventListener('click', () => {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*';
+      input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          const img = document.createElement('img');
+          img.src = ev.target.result;
+          img.className = 'cover-photo';
+          placeholder.replaceWith(img);
+        };
+        reader.readAsDataURL(file);
+      };
+      input.click();
+    });
+  }
+</script>
+
+</body>
+</html>
