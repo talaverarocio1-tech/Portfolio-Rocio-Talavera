@@ -738,6 +738,71 @@
   #ltopia .case-index { color: #6B6960; }
   #ltopia .case-name { color: #1A1915; }
 
+
+  /* ── SECTION ACCENTS ── */
+
+  /* Warm tint on alternating case sections */
+  .case {
+    background: rgba(196, 183, 163, 0.08);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    margin: 0 -2rem;
+  }
+
+  /* Section labels get a warm dusty rose accent */
+  .section-label {
+    color: #A8896C !important;
+    letter-spacing: 0.18em;
+  }
+
+  /* Block labels get a subtle warm tone */
+  .block-label {
+    color: #A8896C !important;
+  }
+
+  /* Insight quote border warmer */
+  .insight {
+    border-left: 2px solid #C4A882 !important;
+    background: rgba(196, 168, 130, 0.06);
+    border-radius: 0 6px 6px 0;
+    padding: 0.75rem 0 0.75rem 1.75rem !important;
+  }
+
+  /* Payoff box with warm tint */
+  .payoff-box {
+    background: rgba(196, 168, 130, 0.08);
+    border-color: rgba(196, 168, 130, 0.4) !important;
+  }
+
+  /* Case index number accent */
+  .case-index {
+    color: #C4A882 !important;
+  }
+
+  /* Divider between cases */
+  .case {
+    border-bottom-color: rgba(196, 168, 130, 0.25) !important;
+  }
+
+  /* Impact items with left accent */
+  .impact-item {
+    border-left: 2px solid rgba(196, 168, 130, 0.4);
+    padding-left: 1rem;
+  }
+
+  /* Capabilities section subtle background */
+  #capabilities, #about {
+    position: relative;
+  }
+  #capabilities::before {
+    content: '';
+    position: absolute;
+    left: -2rem; right: -2rem; top: 0; bottom: 0;
+    background: rgba(196, 168, 130, 0.06);
+    border-radius: 12px;
+    pointer-events: none;
+  }
+
 </style>
 </head>
 <body>
@@ -860,7 +925,7 @@
           </div>
           <div class="del-item">
             <p class="del-name">Messaging principles</p>
-            <p class="del-desc">Primary payoff + campaign line + 4 secondary support phrases for the verbal system.</p>
+            <p class="del-desc">1. Atención integral no es un concepto. Es nuestra práctica.<br>2. Tú sabes como te sientes. Nosotros sabemos porqué.<br>3. Conocer tu cuerpo es salud.</p>
           </div>
           <div class="del-item">
             <p class="del-name">Content guidelines</p>
@@ -875,7 +940,7 @@
 
       <div class="payoff-box">
         <span class="payoff-label">Payoff</span>
-        <span class="payoff-text">Donde entender tu cuerpo es salud.</span>
+        <span class="payoff-text">Un nuevo enfoque en salud femenina.</span>
       </div>
 
       <div>
@@ -1160,10 +1225,7 @@
             <p class="impact-label">Channels covered</p>
             <p class="impact-value">5 platforms with specific tone + tactic guidelines</p>
           </div>
-          <div class="impact-item">
-            <p class="impact-label">Target KPI</p>
-            <p class="impact-value">100 qualified leads in 90 days via landing page</p>
-          </div>
+
         </div>
       </div>
 
